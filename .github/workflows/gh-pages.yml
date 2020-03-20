@@ -28,10 +28,10 @@ jobs:
       # SDK version to use.
         dotnet-version: '3.1.200'
     - name: Build Application
-      run: dotnet publish -c Release
+      run: dotnet publish -c Release ./HelloBlazorWasm/HelloBlazorWasm.csproj
     
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
            github_token: ${{ secrets.GITHUB_TOKEN }}
-           publish_dir: ./bin/Release/netstandard2.1/publish/wwwroot/
+           publish_dir: ./HelloBlazorWasm/bin/Release/netstandard2.1/publish/wwwroot/
